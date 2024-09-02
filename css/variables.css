@@ -1,0 +1,41 @@
+:root {
+  --font-size-base: 1rem; /*16px*/
+  --font-size-h1-mobile: 2.1875rem; /*35px*/
+  --font-size-h1-770: 2.8125rem; /*45px*/
+  --font-size-h1-1200: 3.5rem; /*56px*/
+
+  --font-size-h2: 1.875rem; /*30px*/
+  --font-size-h3: 1.5rem; /*24px*/
+  --font-size-h4: 1.25rem; /*20px*/
+
+  --font-family-headers: "Open Sans";
+  --font-family-body: "Montserrat";
+
+  --font-weight-light: 100;
+  --font-weight-regular: 400;
+  --font-weight-semi-bold: 500;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+
+  --font-max-width: 37.5rem; /*600px*/
+
+  --spacing-small: 0.5rem; /*8px*/
+  --spacing-medium: 1rem; /*16px*/
+  --spacing-large: 1.5rem; /*24px*/
+  --spacing-x-large: 2rem; /*32px*/
+  --spacing-xx-large: 2.5rem; /*40px*/
+
+  --container-max-width: 75rem; /*1200px*/
+  --content-container-sm-max-width: 31.25rem; /*5000px*/
+  --content-container-max-width: 45.625rem; /*730px approx 75ch*/
+
+  --neutral-light: #fff;
+  --neutral-grey: #d8dadb91;
+  --sections-color: rgb(244, 247, 250);
+  --neutral-dark: #252f3f;
+
+  --primary-light: hsl(60, 100%, 97%);
+  --primary-neutral: hsl(39, 78%, 57%);
+
+  --secondary-neutral: hsl(219, 84%, 37%);
+}
