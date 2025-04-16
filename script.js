@@ -1,6 +1,6 @@
 /* Query Selectors */
 const headerContainer = document.querySelector(".navigation-header-container");
-const heroSection = document.querySelector(".hero__section");
+const heroSection = document.querySelector(".hero-section");
 
 const logoImgElement = document.querySelector(
   ".navigation-header-logo-container img"
@@ -17,6 +17,37 @@ const menuIconContainer = document.querySelector(
 );
 
 const navItemLinks = document.querySelectorAll(".nav-items-links");
+
+const formContainer = document.querySelector(".form-info");
+
+const applyNowContainer = document.querySelector(
+  ".apply-now-section .container"
+);
+const form = document.getElementById("form");
+const sendingLoader = document.querySelector(".sending-form");
+const result = document.querySelector(".form-submit-result");
+
+// Form Submit Result Selector
+const formSubmitResult = document.querySelector(".form-submit-result");
+const formSubmitResult_Icon = document.querySelector(
+  ".form-submit-result__icon"
+);
+const formSubmitResult_Header = document.querySelector(
+  ".form-submit-result__header"
+);
+const formSubmitResult_Text = document.querySelector(
+  ".form-submit-result__text"
+);
+
+const phoneNumberInput = document.getElementById("phoneInput");
+
+// input file name
+const fileName = document.querySelector(".attachment__uploaded-file-name");
+// remove icon
+const removeFileIcon = document.querySelector(".attachment__remove-icon");
+
+// Attachment
+const file = document.getElementById("attachment");
 
 /* Global Constants */
 const logoColors = {
@@ -36,10 +67,33 @@ const hamburgerIconColors = {
 
 const desktopDimensions = 768;
 
+const formSubmitResultMessages = {
+  success: {
+    iconSrc: "assets/icons/carbon_success.svg",
+    alt: "check-mark icon",
+    header: "Form submitted successfully!",
+    headerColor: "#14ae5c",
+    text: "Thank you! The form has been submitted successfully. We will reply to you soon!",
+  },
+  error: {
+    iconSrc: "assets/icons/carbon_error.svg",
+    alt: "error icon",
+    header: "Oops! Something went wrong.",
+    headerColor: "#f24822",
+    text: "Please try again later.",
+  },
+};
+
 /* Utils */
 const isWindowGreaterThan = (size) => {
   const windowSize = window.innerWidth;
   return windowSize > size;
+};
+
+const resetAttachmentUpload = () => {
+  file.value = "";
+  fileName.textContent = "No file chosen";
+  removeFileIcon.classList.toggle("attachment__remove-icon--show");
 };
 
 /*=============================== HEADER ===============================*/
@@ -201,3 +255,71 @@ const onNavigationIndicatorClick = (e) => {
 
 setTimeout(() => carouselController(), 3500);
 carouselNav.addEventListener("click", onNavigationIndicatorClick);
+
+/*=============================== Apply Now ===============================*/
+file.addEventListener("change", function () {
+  if (this.files.length > 0) {
+    const selectedFile = this.files[0];
+    fileName.textContent = selectedFile.name;
+    removeFileIcon.classList.toggle("attachment__remove-icon--show");
+  } else {
+    resetAttachmentUpload();
+  }
+});
+
+removeFileIcon.addEventListener("click", resetAttachmentUpload);
+
+const setFormSubmitResult = ({ iconSrc, alt, header, headerColor, text }) => {
+  formSubmitResult.style.display = "block";
+  formSubmitResult_Icon.src = iconSrc;
+  formSubmitResult_Icon.alt = alt;
+  formSubmitResult_Header.textContent = header;
+  formSubmitResult_Header.style.color = headerColor;
+  formSubmitResult_Text.textContent = text;
+};
+
+function formatPhoneNumber(phoneNumberString) {
+  var cleaned = ("" + phoneNumberString).replace(/\D/g, "");
+  var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+  if (match) {
+    return match[1] + "-" + match[2] + "-" + match[3];
+  }
+  return phoneNumberString;
+}
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  phoneNumberInput.value = formatPhoneNumber(phoneNumberInput.value);
+
+  const formData = new FormData(form);
+  formData.append("access_key", "37802d18-685d-49f4-8bbc-d2cf34a8d923");
+  formData.append("subject", "New Job Submission");
+
+  formContainer.style.display = "none";
+  sendingLoader.style.display = "block";
+
+  fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    body: formData,
+  })
+    .then(async (response) => {
+      if (response.status == 200) {
+        sendingLoader.style.display = "none";
+        setFormSubmitResult(formSubmitResultMessages.success);
+        resetAttachmentUpload();
+      }
+    })
+    .catch((error) => {
+      sendingLoader.style.display = "none";
+      setFormSubmitResult(formSubmitResultMessages.error);
+      resetAttachmentUpload();
+    })
+    .then(function () {
+      form.reset();
+      setTimeout(() => {
+        formSubmitResult.style.display = "none";
+        formContainer.style.display = "block";
+      }, 5000);
+    });
+});

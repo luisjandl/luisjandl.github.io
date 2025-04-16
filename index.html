@@ -96,16 +96,19 @@
               <nav class="desktop__navigation-header-nav">
                 <ul>
                   <li class="navigation-header-nav-items">
-                    <a href="#services" class="nav-items-links"> Services </a>
+                    <a href="#services" class="nav-items-links">Services</a>
                   </li>
                   <li class="navigation-header-nav-items">
-                    <a href="#about" class="nav-items-links"> About </a>
+                    <a href="#about" class="nav-items-links">About</a>
                   </li>
                   <li class="navigation-header-nav-items">
-                    <a href="#team" class="nav-items-links"> Team </a>
+                    <a href="#team" class="nav-items-links">Team</a>
                   </li>
                   <li class="navigation-header-nav-items">
-                    <a href="#contact" class="nav-items-links"> Contact </a>
+                    <a href="#contact" class="nav-items-links">Contact</a>
+                  </li>
+                  <li class="navigation-header-nav-items">
+                    <a href="#applyNow" class="nav-items-links">Apply Now</a>
                   </li>
                 </ul>
               </nav>
@@ -127,6 +130,9 @@
                 <li class="navigation-header-nav-items">
                   <a href="#contact" class="nav-items-links"> Contact </a>
                 </li>
+                <li class="navigation-header-nav-items">
+                  <a href="#applyNow" class="nav-items-links"> Apply Now </a>
+                </li>
               </ul>
             </nav>
           </div>
@@ -138,7 +144,7 @@
       <!------------------------------------------->
       <!--             Hero Section              -->
       <!------------------------------------------->
-      <section id="heroSection" class="hero__section">
+      <section id="heroSection" class="hero-section">
         <div class="carousel">
           <div class="carousel__track-container">
             <ul class="carousel__track">
@@ -166,19 +172,24 @@
             </ul>
           </div>
         </div>
-        <div class="hero__section-info container">
-          <h1 class="hero__section-title">
+        <div class="hero-section__info container">
+          <h1 class="hero-section__title">
             J&L <br />
             CONSTRUCTION <br />
             LLC
           </h1>
-          <p class="hero__section-description">
+          <p class="hero-section__description">
             A <span>family owned</span> company <br />
             specialized in heavy civil <br />utilities.
           </p>
-          <a href="#services">
-            <button class="hero__section-button">View Services</button>
-          </a>
+          <div class="hero-section__buttons-container">
+            <a href="#services">
+              <button class="hero-section__button">View Services</button>
+            </a>
+            <a href="#applyNow" class="apply-now-link">
+              <button class="hero-section__button">Apply Now</button>
+            </a>
+          </div>
         </div>
         <div class="carousel__nav">
           <button
@@ -198,9 +209,9 @@
       <!------------------------------------------->
       <!--                Services               -->
       <!------------------------------------------->
-      <section id="services" class="page__section projects__section">
+      <section id="services" class="page-section projects__section">
         <div class="service__container container">
-          <h2 class="page__section-header">Services</h2>
+          <h2 class="page-section__header">Services</h2>
           <div class="service-desktop-grid">
             <div class="service__grid-container">
               <div
@@ -209,7 +220,7 @@
                 <img
                   src="assets/images/Services/service-img4.webp"
                   alt="A skid-steer loading up an eighteen wheeler with dirt."
-                  class="page__section_img"
+                  class="page-section__img"
                 />
               </div>
               <div
@@ -218,7 +229,7 @@
                 <img
                   src="assets/images/Services/service-img2.webp"
                   alt="A skid-steer loading up an eighteen wheeler with dirt."
-                  class="page__section_img"
+                  class="page-section__img"
                 />
               </div>
               <div
@@ -227,7 +238,7 @@
                 <img
                   src="assets/images/Services/service-img1.webp"
                   alt="A skid-steer loading up an eighteen wheeler with dirt."
-                  class="page__section_img"
+                  class="page-section__img"
                 />
               </div>
               <div
@@ -236,14 +247,14 @@
                 <img
                   src="assets/images/Services/service-img3.webp"
                   alt="A skid-steer loading up an eighteen wheeler with dirt."
-                  class="page__section_img service__section-img"
+                  class="page-section__img service__section-img"
                 />
               </div>
             </div>
-            <div class="page__section__body">
+            <div class="page-section__body">
               <p class="service__body-top">
                 J&amp;L Construction’s main scope includes waterline, sewer
-                line, storm drainage, concrete, and pavement rehabilitation.  We
+                line, storm drainage, concrete, and pavement rehabilitation. We
                 have successfully executed various significant contracts,
                 including:
               </p>
@@ -275,12 +286,15 @@
       <!------------------------------------------->
       <!--                About                  -->
       <!------------------------------------------->
-      <section id="about" class="page__section about__section">
+      <section id="about" class="page-section about__section">
         <div class="about_container container">
-          <h2 class="page__section-header">About</h2>
+          <h2 class="page-section__header">About</h2>
           <div class="about-desktop-grid">
-            <div class="about__section-img-container page__section_img">
-              <img src="assets/images/About/about-img1.png" alt="" />
+            <div class="about__section-img-container page-section__img">
+              <img
+                src="assets/images/About/about-img2.webp"
+                alt="Hyundai excavator"
+              />
             </div>
             <div class="about__section-body">
               <p class="about__section-body-paragraph">
@@ -304,9 +318,9 @@
       <!------------------------------------------->
       <!--                Team                   -->
       <!------------------------------------------->
-      <section id="team" class="page__section">
+      <section id="team" class="page-section">
         <div class="container">
-          <h2 class="page__section-header">Team</h2>
+          <h2 class="page-section__header">Team</h2>
           <div class="team__grid-container">
             <article class="team__card">
               <div class="team__card-header">
@@ -417,27 +431,124 @@
         </div>
       </section>
       <!------------------------------------------->
+      <!--                Apply Now              -->
+      <!------------------------------------------->
+      <section id="applyNow" class="page-section apply-now-section">
+        <div class="container">
+          <h2 class="page-section__header">Apply Now</h2>
+          <!-- Sending ... -->
+          <div class="sending-form loader"></div>
+          <!-- Form Submit Result -->
+          <div class="form-submit-result">
+            <img class="form-submit-result__icon" src="" alt="" />
+            <h4 class="form-submit-result__header"></h4>
+            <p class="form-submit-result__text"></p>
+          </div>
+          <!-- Form -->
+          <div class="form-info">
+            <p>Interested in joining our team? We'd love to hear from you.</p>
+            <form
+              action="https://api.web3forms.com/submit"
+              method="POST"
+              id="form"
+              enctype="multipart/form-data"
+              method="POST"
+            >
+              <input
+                type="checkbox"
+                name="botcheck"
+                id=""
+                style="display: none"
+              />
+              <div class="form-row">
+                <div class="input-data">
+                  <input type="text" name="first name" required />
+                  <div class="underline"></div>
+                  <label for="">First Name</label>
+                </div>
+                <div class="input-data input-data-second-column">
+                  <input type="text" name="last name" required />
+                  <div class="underline"></div>
+                  <label for="">Last Name</label>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="input-data">
+                  <input type="email" name="email" required />
+                  <div class="underline"></div>
+                  <label for="">Email Address</label>
+                </div>
+                <div class="input-data input-data-second-column">
+                  <input
+                    type="tel"
+                    id="phoneInput"
+                    name="phone number"
+                    maxlength="12"
+                    required
+                  />
+                  <div class="underline"></div>
+                  <label for="">Phone Number</label>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="attachment__container">
+                  <p class="attachment__input-label">Upload Resume</p>
+                  <div class="attachment__input-container">
+                    <label for="attachment" class="attachment__input">
+                      <img
+                        src="assets/icons/upload_icon.svg"
+                        alt=""
+                        class="attachment__upload-icon"
+                      />
+                      <p class="attachment__uploaded-file-name">
+                        No file chosen
+                      </p>
+                    </label>
+                    <img
+                      src="assets/icons/remove_icon.svg"
+                      class="attachment__remove-icon"
+                    />
+                  </div>
+                  <input
+                    type="file"
+                    name="attachment"
+                    id="attachment"
+                    data-max-files="1"
+                    data-max-file-size="2MB"
+                    accept=".pdf"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-row submit-button__container">
+                <button type="submit">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      <!------------------------------------------->
       <!--                Contact                -->
       <!------------------------------------------->
-      <section id="contact" class="page__section contact__section">
+      <section id="contact" class="page-section contact-section">
         <div class="container">
-          <h2 class="page__section-header">Contact Us</h2>
-          <div class="contact__section-grid">
+          <h2 class="page-section__header">Contact Us</h2>
+          <div class="contact-section__grid">
             <!-- logo -->
-            <div class="contact__logo-container">
+            <div class="contact-logo__container">
               <img
                 src="assets/images/Contact/logo-contact-section-lg.png"
                 alt="J&L Construction Logo"
               />
             </div>
-            <div class="contact__section-info">
-              <div class="contact__section-info-detail">
-                <div class="contact__section-icon-container">
+            <div class="contact-section__info">
+              <div class="contact-section__info-detail">
+                <div class="contact-section__icon-container">
                   <img src="assets/icons/map_icon.svg" alt="Map icon" />
                 </div>
-                <p class="contact__section-icon-text">
+                <p class="contact-section__icon-text">
                   <a
-                    class="contact__section-anchor"
+                    class="contact-section__anchor"
                     target="_blank"
                     href="https://www.google.com/maps/place/2220+San+Jacinto+Blvd,+Denton,+TX+76205/@33.1926211,-97.1126436,16z/data=!3m1!4b1!4m6!3m5!1s0x864dcadf3cadfd25:0x8117592d6723307f!8m2!3d33.1926211!4d-97.1100687!16s%2Fg%2F11bytpj0jb?entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D"
                   >
@@ -446,20 +557,22 @@
                   >
                 </p>
               </div>
-              <div class="contact__section-info-detail">
-                <div class="contact__section-icon-container">
+              <div class="contact-section__info-detail">
+                <div class="contact-section__icon-container">
                   <img
                     src="assets/icons/smartphone_icon.svg"
                     alt="Smartphone icon"
                   />
                 </div>
-                <p class="contact__section-icon-text">(940) 629-3571</p>
+                <p class="contact-section__icon-text">
+                  <a href="tel:1-940-629-3571"> (940) 629-3571 </a>
+                </p>
               </div>
-              <div class="contact__section-info-detail">
-                <div class="contact__section-icon-container">
+              <div class="contact-section__info-detail">
+                <div class="contact-section__icon-container">
                   <img src="assets/icons/mail_icon.svg" alt="Mail icon" />
                 </div>
-                <p class="contact__section-icon-text">
+                <p class="contact-section__icon-text">
                   <a
                     href="mailto:office@constructionjandl.com"
                     class="contact__section-anchor"
