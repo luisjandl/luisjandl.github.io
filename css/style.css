@@ -328,36 +328,10 @@
 }
 
 /*******************************/
-/******** Team Section ********/
-/*******************************/
-.team__grid-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--spacing-xx-large);
-}
-
-.team__card {
-  max-width: 325px;
-  margin: 0 auto;
-}
-.team__card-image {
-  width: 100%;
-}
-
-.team__card-title {
-  font-weight: 900;
-  font-size: 24px;
-}
-.team_card-subtitle {
-  font-weight: 400;
-  font-size: 20px;
-}
-
-/*******************************/
 /*******   Apply Now     *******/
 /*******************************/
 .apply-now-section {
-  background-color: var(--sections-color);
+  background: rgba(255, 255, 255, 1);
 }
 
 .container form .form-row {
@@ -366,7 +340,7 @@
 }
 
 .input-data input {
-  background-color: var(--sections-color);
+  background: rgba(255, 255, 255, 1);
   display: block;
   width: 100%;
   height: 100%;
@@ -768,17 +742,6 @@ a[href^="tel"] {
     grid-template-rows: repeat(7, 73px);
     margin-bottom: var(--spacing-medium);
   }
-
-  /* Team */
-  .team__grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-xx-large);
-  }
-
-  .team__card {
-    margin: 0;
-  }
 }
 
 /* ================================================================================================ */
@@ -809,13 +772,6 @@ a[href^="tel"] {
 
   .service__grid-container {
     grid-column: 2/3;
-  }
-
-  /* Team */
-  .team__grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-xx-large);
   }
 }
 
